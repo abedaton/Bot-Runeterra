@@ -1,4 +1,4 @@
-API/core/img/cards/*.png
+src/AI/API/img/cards/*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
