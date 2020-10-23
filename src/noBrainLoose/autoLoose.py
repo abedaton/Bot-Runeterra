@@ -101,6 +101,11 @@ if __name__=="__main__":
                 click_image("images/VSIANotSelected.png", pos3, "left")
                 time.sleep(0.3)
                 playGame(num)
+                if (boolPVP):
+                    time.sleep(0.5)
+                    keyboard.press(Key.esc)
+                    keyboard.release(Key.esc)
+                    time.sleep(0.5)
         elif boolPVP:
             pos3 = imagesearch_loop(r"images/PVPNotSelected.png", 0.5, 0.9)
             if ((pos3[0] != -1) and (pos3[1] != -1)):
