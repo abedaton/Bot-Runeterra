@@ -81,7 +81,7 @@ def playGame(num=10):
 
 if __name__=="__main__":
     keyboard = Controller()
-    boolIA, boolPVP = False, False
+    boolIA, boolPVP = False, True
     num = 10
     for i in range(len(argv)):
         if argv[i]=="-IA":
@@ -101,8 +101,11 @@ if __name__=="__main__":
                 click_image("images/VSIANotSelected.png", pos3, "left")
                 time.sleep(0.3)
                 playGame(num)
+            pos = imagesearch_loop(r"images/VSIASelected.png", 0.5, 0.5)
+            if ((pos3[0] != -1) and (pos3[1] != -1)):
+                click_image("images/VSIASelected.png", pos3, "left")
         elif boolPVP:
-            pos3 = imagesearch_loop(r"images/PVPNotSelected.png", 0.5, 0.9)
+            pos3 = imagesearch_loop(r"images/PVPNotSelected.png", 0.5, 0.6)
             if ((pos3[0] != -1) and (pos3[1] != -1)):
                  click_image("images/PVPNotSelected.png", pos3, "left")
                  time.sleep(0.3)
