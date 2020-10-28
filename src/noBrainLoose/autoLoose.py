@@ -101,9 +101,17 @@ if __name__=="__main__":
                 click_image("images/VSIANotSelected.png", pos3, "left")
                 time.sleep(0.3)
                 playGame(num)
+<<<<<<< HEAD:autoLoose.py
             pos = imagesearch_loop(r"images/VSIASelected.png", 0.5, 0.5)
             if ((pos3[0] != -1) and (pos3[1] != -1)):
                 click_image("images/VSIASelected.png", pos3, "left")
+=======
+                if (boolPVP):
+                    time.sleep(0.5)
+                    keyboard.press(Key.esc)
+                    keyboard.release(Key.esc)
+                    time.sleep(0.5)
+>>>>>>> f15d37ddcf8737f474ba3bfa96242fb090b107b3:src/noBrainLoose/autoLoose.py
         elif boolPVP:
             pos3 = imagesearch_loop(r"images/PVPNotSelected.png", 0.5, 0.6)
             if ((pos3[0] != -1) and (pos3[1] != -1)):
