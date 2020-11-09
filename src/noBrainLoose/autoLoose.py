@@ -37,10 +37,11 @@ def start():
             return 0
     print(pos)
     click_image("images/runeterraLogo.png", pos, "left", times=2)
-    print("Waiting for the Play Button")
-    pos2 = imagesearch_loop(r"images/PlayButton.png", 0.5, 0.9)
+    print("Waiting for the Play Button...")
+    pos2 = imagesearch_loop(r"images/PlayButtonSmall.png", 1, 0.5)
     time.sleep(1)
-    click_image("images/PlayButton.png", pos2, "left")
+    click_image("images/PlayButtonSmall.png", pos2, "left", offset = 0)
+    print("non")
     return 1
 
 def playGame(num=10):
@@ -82,11 +83,13 @@ def playGame(num=10):
 if __name__=="__main__":
     keyboard = Controller()
     boolIA, boolPVP = False, True
-    num = 10
+    num = 11
     for i in range(len(argv)):
         if argv[i]=="-IA":
+            print("oui1")
             boolIA = True
         elif argv[i]=="-PVP":
+            print("oui2")
             boolPVP = True
         elif argv[i]=="-n":
             num = argv[i+1]
@@ -96,23 +99,17 @@ if __name__=="__main__":
         print("ERROR")
     else:
         if boolIA:
+            print("Launching against IA")
             pos3 = imagesearch_loop(r"images/VSIANotSelected.png", 0.5, 0.9)
             if ((pos3[0] != -1) and (pos3[1] != -1)):
                 click_image("images/VSIANotSelected.png", pos3, "left")
                 time.sleep(0.3)
                 playGame(num)
-<<<<<<< HEAD:autoLoose.py
             pos = imagesearch_loop(r"images/VSIASelected.png", 0.5, 0.5)
             if ((pos3[0] != -1) and (pos3[1] != -1)):
                 click_image("images/VSIASelected.png", pos3, "left")
-=======
-                if (boolPVP):
-                    time.sleep(0.5)
-                    keyboard.press(Key.esc)
-                    keyboard.release(Key.esc)
-                    time.sleep(0.5)
->>>>>>> f15d37ddcf8737f474ba3bfa96242fb090b107b3:src/noBrainLoose/autoLoose.py
-        elif boolPVP:
+        if boolPVP:
+            print("Launching against PVP")
             pos3 = imagesearch_loop(r"images/PVPNotSelected.png", 0.5, 0.6)
             if ((pos3[0] != -1) and (pos3[1] != -1)):
                  click_image("images/PVPNotSelected.png", pos3, "left")
